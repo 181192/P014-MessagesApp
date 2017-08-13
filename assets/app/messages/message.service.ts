@@ -22,7 +22,7 @@ export class MessageService {
         const token = localStorage.getItem('token') 
             ? '?token=' + localStorage.getItem('token')
             : '';
-        return this.http.post("https://" + process.env.IP +"/message" + token, body, {headers: headers})
+        return this.http.post("https://udemy-nodejs-angular-kalli.c9users.io/message" + token, body, {headers: headers})
             .map((response: Response) => {
                 const result = response.json();
                 const message = new Message(
