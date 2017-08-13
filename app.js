@@ -7,7 +7,8 @@ var express      = require('express'),
     mongoose     = require('mongoose');
 
 var appRoutes     = require('./routes/app'),
-    messageRoutes = require('./routes/messages');
+    messageRoutes = require('./routes/messages'),
+    userRoutes    = require('./routes/user');
 
 var app = express();
 var url = process.env.DATABASEURL || "mongodb://localhost/node-angular";
@@ -34,6 +35,7 @@ app.use(function (req, res, next) {
 });
 
 app.use('/message', messageRoutes);
+app.use('/user', userRoutes);
 app.use('/', appRoutes);
 
 // catch 404 and forward to error handler
