@@ -11,7 +11,7 @@ var appRoutes     = require('./routes/app'),
     userRoutes    = require('./routes/user');
 
 var app = express();
-var url = process.env.DATABASEURL || "mongodb://localhost/node-angular";
+var url = process.env.DATABASEURL;
 mongoose.connect(url, {useMongoClient: true});
 mongoose.Promise = global.Promise;
 
